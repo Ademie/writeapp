@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
 class Overview extends StatefulWidget {
@@ -12,38 +13,52 @@ class _OverviewState extends State<Overview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const Text('Notes'),
-        actions: [
-          Switch.adaptive(
-              value: themeManager.themeMode == ThemeMode.dark,
-              onChanged: (newValue) {
-                themeManager.toggleTheme(newValue);
-              })
-        ],
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        // backgroundColor: WriteColors.accent,
         child: Icon(Icons.add),
       ),
-      body: ListView(
-        children: [
-          Container(
-            margin: const EdgeInsets.all(20),
-            height: 50,
-            decoration: BoxDecoration(
-              color: Colors.grey.shade300,
-              borderRadius: BorderRadius.circular(20),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              width: 600,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Notes',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  Switch.adaptive(
+                      value: themeManager.themeMode == ThemeMode.dark,
+                      onChanged: (newValue) {
+                        themeManager.toggleTheme(newValue);
+                      })
+                ],
+              ),
             ),
-            child: TextFormField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-              )),
+            Expanded(
+              child: ListView(
+                children: [
+                  Container(
+                    margin: const EdgeInsets.all(20),
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      )),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
