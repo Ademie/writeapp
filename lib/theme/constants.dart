@@ -11,6 +11,7 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
   inputDecorationTheme: InputDecorationTheme(
+    prefixIconColor: WriteColors.accent,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(20),
       borderSide: BorderSide.none,
@@ -28,12 +29,13 @@ ThemeData darkTheme = ThemeData(
     backgroundColor: WriteColors.primary,
   ),
   inputDecorationTheme: InputDecorationTheme(
+    prefixIconColor: WriteColors.primary,
+    
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(20),
       borderSide: BorderSide.none,
     ),
     filled: true,
     fillColor: WriteColors.accent.shade100,
-    // Color.fromARGB(255, 75, 75, 74),
   ),
 );
