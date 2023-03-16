@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:writeapp/theme/colors.dart';
+import 'package:writeapp/screens/overviewwidgets/search_bar.dart';
+import 'package:writeapp/screens/overviewwidgets/top_bar.dart';
 import 'package:writeapp/theme_manager.dart';
 
 class Overview extends StatefulWidget {
@@ -20,40 +21,11 @@ class _OverviewState extends State<Overview> {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              width: 600,
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Notes',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                  ),
-                  Switch.adaptive(
-                      value: themeManager.themeMode == ThemeMode.dark,
-                      onChanged: (newValue) {
-                        themeManager.toggleTheme(newValue);
-                      })
-                ],
-              ),
-            ),
+            TopBar(),
             Expanded(
               child: ListView(
                 children: [
-                  Container(
-                    margin: const EdgeInsets.all(20),
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      )),
-                    ),
-                  ),
+                  SearchBar(),
                 ],
               ),
             ),
