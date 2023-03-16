@@ -7,19 +7,15 @@ class SearchBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    InputDecorationTheme _inputTheme = Theme.of(context).inputDecorationTheme;
+
     return Container(
       margin: const EdgeInsets.all(20),
       height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
       ),
-      child: TextFormField(
-        decoration: InputDecoration(
-            border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
-        )),
-      ),
+      child: TextFormField(),
     );
   }
 }
-

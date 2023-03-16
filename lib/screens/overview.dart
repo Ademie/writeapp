@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:writeapp/screens/overviewwidgets/search_bar.dart';
 import 'package:writeapp/screens/overviewwidgets/top_bar.dart';
-import 'package:writeapp/theme_manager.dart';
 
 class Overview extends StatefulWidget {
   const Overview({super.key});
