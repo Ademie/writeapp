@@ -25,6 +25,27 @@ class _OverviewState extends State<Overview> {
               child: ListView(
                 children: [
                   SearchBar(),
+                  DefaultTabController(
+                    length: 2,
+                    child: Column(
+                      children: [
+                        TabBar(
+                          tabs: [
+                            Tab(
+                              text: 'All Notes',
+                            ),
+                            Tab(
+                              text: 'Folders',
+                            )
+                          ],
+                        ),
+                        Container(
+                            height: 400,
+                            child: TabBarView(
+                                children: [Text('Tab 1'), Text('Tab 2')]))
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

@@ -10,6 +10,7 @@ ThemeData lightTheme = ThemeData(
       color: WriteColors.primary,
     ),
   ),
+  // INPUT FIELD
   inputDecorationTheme: InputDecorationTheme(
     prefixIconColor: WriteColors.accent,
     border: OutlineInputBorder(
@@ -19,6 +20,7 @@ ThemeData lightTheme = ThemeData(
     filled: true,
     fillColor: WriteColors.primary.shade300,
   ),
+  // TABBAR
 );
 
 ThemeData darkTheme = ThemeData(
@@ -28,9 +30,9 @@ ThemeData darkTheme = ThemeData(
   floatingActionButtonTheme: FloatingActionButtonThemeData(
     backgroundColor: WriteColors.primary,
   ),
+  // INPUT FIELD
   inputDecorationTheme: InputDecorationTheme(
     prefixIconColor: WriteColors.primary,
-    
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(20),
       borderSide: BorderSide.none,
