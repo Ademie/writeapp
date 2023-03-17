@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:material_color_generator/material_color_generator.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:writeapp/theme/colors.dart';
 
 ThemeData lightTheme = ThemeData(
@@ -25,7 +26,7 @@ ThemeData lightTheme = ThemeData(
     labelColor: WriteColors.accent,
     indicatorSize: TabBarIndicatorSize.label,
   ),
-  
+  textTheme: GoogleFonts.acmeTextTheme(),
 );
 
 ThemeData darkTheme = ThemeData(
@@ -48,5 +49,11 @@ ThemeData darkTheme = ThemeData(
   // TABBAR
   tabBarTheme: TabBarTheme(
     indicatorSize: TabBarIndicatorSize.label,
+  ),
+  textTheme: GoogleFonts.acmeTextTheme().copyWith(
+    bodyMedium: GoogleFonts.acme(
+      color: Colors.white, 
+      fontWeight: FontWeight.w100
+    )
   ),
 );
