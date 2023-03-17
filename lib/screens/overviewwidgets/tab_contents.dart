@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:writeapp/theme/colors.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class TabContents extends StatelessWidget {
   const TabContents({
@@ -9,24 +10,23 @@ class TabContents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(20),
-        child: GridView.builder(
-            itemCount: 30,
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 250,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-            ),
-            itemBuilder: (_, index) {
-              return Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: WriteColors.primary
-
-                ),
-                height: 300,
-                
-              );
-            }));
+      padding: EdgeInsets.all(20),
+      child: GridView.builder(
+        itemCount: 30,
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 250,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+        ),
+        itemBuilder: (_, index) {
+          return Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: WriteColors.primary),
+            height: 300,
+          );
+        },
+      ),
+    );
   }
 }
