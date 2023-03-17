@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:writeapp/screens/overviewwidgets/search_bar.dart';
+import 'package:writeapp/screens/overviewwidgets/tab_contents.dart';
 import 'package:writeapp/screens/overviewwidgets/top_bar.dart';
+import 'package:writeapp/theme/colors.dart';
+import 'package:writeapp/theme_manager.dart';
 
 class Overview extends StatefulWidget {
   const Overview({super.key});
@@ -30,6 +33,11 @@ class _OverviewState extends State<Overview> {
                     child: Column(
                       children: [
                         TabBar(
+                          indicatorColor: WriteColors.primary,
+                          unselectedLabelStyle: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w500),
+                          labelStyle: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.w800),
                           tabs: [
                             Tab(
                               text: 'All Notes',
@@ -40,9 +48,12 @@ class _OverviewState extends State<Overview> {
                           ],
                         ),
                         Container(
-                            height: 400,
-                            child: TabBarView(
-                                children: [Text('Tab 1'), Text('Tab 2')]))
+                            height: MediaQuery.of(context).size.height * 0.8,
+                            padding: EdgeInsets.only(bottom: 100),
+                            child: TabBarView(children: [
+                              TabContents(),
+                              TabContents(),
+                            ]))
                       ],
                     ),
                   ),

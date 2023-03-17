@@ -21,6 +21,11 @@ ThemeData lightTheme = ThemeData(
     fillColor: WriteColors.primary.shade300,
   ),
   // TABBAR
+  tabBarTheme: TabBarTheme(
+    labelColor: WriteColors.accent,
+    indicatorSize: TabBarIndicatorSize.label,
+  ),
+  
 );
 
 ThemeData darkTheme = ThemeData(
@@ -39,5 +44,9 @@ ThemeData darkTheme = ThemeData(
     ),
     filled: true,
     fillColor: WriteColors.accent.shade100,
+  ),
+  // TABBAR
+  tabBarTheme: TabBarTheme(
+    indicatorSize: TabBarIndicatorSize.label,
   ),
 );
