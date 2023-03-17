@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:writeapp/screens/overviewwidgets/search_bar.dart';
 import 'package:writeapp/screens/overviewwidgets/tab_controller.dart';
 import 'package:writeapp/screens/overviewwidgets/top_bar.dart';
-
-
+import 'package:writeapp/theme/colors.dart';
 
 class Overview extends StatefulWidget {
   const Overview({super.key});
@@ -29,7 +28,7 @@ class _OverviewState extends State<Overview> {
             children: [
               TopBar(),
               SizedBox(
-                height: mediaHeight - 50,
+                height: mediaHeight - 100,
                 child: ListView(
                   children: [
                     SearchBar(),
@@ -40,6 +39,31 @@ class _OverviewState extends State<Overview> {
                   ],
                 ),
               ),
+              Container(
+                width: 414,
+                height: 50,
+                color: WriteColors.primary,
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.check_circle_outline),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.mic_none_rounded),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.camera_alt_outlined),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.edit_note_rounded),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
@@ -47,4 +71,3 @@ class _OverviewState extends State<Overview> {
     );
   }
 }
-
