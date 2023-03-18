@@ -18,7 +18,7 @@ class _OverviewState extends State<Overview> {
     final double mediaHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
-        child: Column(
+        child: ListView(
           children: [
             TopBar(),
             SizedBox(
