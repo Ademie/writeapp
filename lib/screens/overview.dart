@@ -37,9 +37,16 @@ class _OverviewState extends State<Overview> {
         ),
       ),
       bottomSheet: BottomBar(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
+      floatingActionButton: SizedBox(
+        height: 70,
+        width: 70,
+        child: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(
+            Icons.add,
+            size: 35,
+          ),
+        ),
       ),
     );
   }
