@@ -16,35 +16,41 @@ class _OverviewState extends State<Overview> {
   @override
   Widget build(BuildContext context) {
     final double mediaHeight = MediaQuery.of(context).size.height;
-    return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          children: [
-            TopBar(),
-            SizedBox(
-              height: mediaHeight - 200,
-              child: ListView(
-                children: [
-                  SearchBar(),
-                  DefaultTabController(
-                    length: 2,
-                    child: TabControllerChild(),
+    return Center(
+      child: Container(
+        width: 414,
+        height: mediaHeight,
+        child: Scaffold(
+          body: SafeArea(
+            child: ListView(
+              children: [
+                TopBar(),
+                SizedBox(
+                  height: mediaHeight - 200,
+                  child: ListView(
+                    children: [
+                      SearchBar(),
+                      DefaultTabController(
+                        length: 2,
+                        child: TabControllerChild(),
+                      ),
+                    ],
                   ),
-                ],
+                ),
+              ],
+            ),
+          ),
+          bottomSheet: BottomBar(),
+          floatingActionButton: SizedBox(
+            height: 70,
+            width: 70,
+            child: FloatingActionButton(
+              onPressed: () {},
+              child: Icon(
+                Icons.add,
+                size: 35,
               ),
             ),
-          ],
-        ),
-      ),
-      bottomSheet: BottomBar(),
-      floatingActionButton: SizedBox(
-        height: 70,
-        width: 70,
-        child: FloatingActionButton(
-          onPressed: () {},
-          child: Icon(
-            Icons.add,
-            size: 35,
           ),
         ),
       ),
