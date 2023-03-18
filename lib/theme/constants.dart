@@ -9,8 +9,14 @@ ThemeData lightTheme = ThemeData(
   colorScheme: ColorScheme.fromSwatch(
     primarySwatch: generateMaterialColor(
       color: WriteColors.primary,
+      
     ),
   ),
+  floatingActionButtonTheme: FloatingActionButtonThemeData(
+    backgroundColor: WriteColors.accent,
+    foregroundColor: Colors.white
+  ),
+  iconTheme: IconThemeData(color: WriteColors.accent, size: 35),
   // INPUT FIELD
   inputDecorationTheme: InputDecorationTheme(
     prefixIconColor: WriteColors.accent,
@@ -26,6 +32,7 @@ ThemeData lightTheme = ThemeData(
     labelColor: WriteColors.accent,
     indicatorSize: TabBarIndicatorSize.label,
   ),
+  // TEXT
   textTheme: GoogleFonts.acmeTextTheme(),
 );
 
@@ -35,6 +42,7 @@ ThemeData darkTheme = ThemeData(
   colorScheme: ColorScheme.dark(primary: WriteColors.primary),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
     backgroundColor: WriteColors.primary,
+    foregroundColor: Colors.white
   ),
   // INPUT FIELD
   inputDecorationTheme: InputDecorationTheme(
@@ -50,10 +58,8 @@ ThemeData darkTheme = ThemeData(
   tabBarTheme: TabBarTheme(
     indicatorSize: TabBarIndicatorSize.label,
   ),
+  iconTheme: IconThemeData(color: Colors.white, size: 35),
   textTheme: GoogleFonts.acmeTextTheme().copyWith(
-    bodyMedium: GoogleFonts.acme(
-      color: Colors.white, 
-      fontWeight: FontWeight.w100
-    )
-  ),
+      bodyMedium:
+          GoogleFonts.acme(color: Colors.white, fontWeight: FontWeight.w100)),
 );
