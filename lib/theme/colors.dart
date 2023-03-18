@@ -6,7 +6,7 @@ class WriteColors {
   static const MaterialColor primary =
       MaterialColor(_primaryValue, <int, Color>{
     50: Color.fromRGBO(255, 159, 50, .1),
-    100: Color.fromRGBO(255, 159, 50, .2),
+    100: Color.fromRGBO(255, 213, 164, 1),
     200: Color.fromRGBO(255, 159, 50, .3),
     300: Color.fromRGBO(255, 159, 50, .4),
     400: Color.fromRGBO(255, 159, 50, .5),

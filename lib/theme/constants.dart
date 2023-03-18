@@ -9,13 +9,10 @@ ThemeData lightTheme = ThemeData(
   colorScheme: ColorScheme.fromSwatch(
     primarySwatch: generateMaterialColor(
       color: WriteColors.primary,
-      
     ),
   ),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: WriteColors.accent,
-    foregroundColor: Colors.white
-  ),
+      backgroundColor: WriteColors.accent, foregroundColor: Colors.white),
   iconTheme: IconThemeData(color: WriteColors.accent, size: 35),
   // INPUT FIELD
   inputDecorationTheme: InputDecorationTheme(
@@ -41,9 +38,7 @@ ThemeData darkTheme = ThemeData(
   scaffoldBackgroundColor: WriteColors.accent,
   colorScheme: ColorScheme.dark(primary: WriteColors.primary),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-    backgroundColor: WriteColors.primary,
-    foregroundColor: Colors.white
-  ),
+      backgroundColor: WriteColors.primary, foregroundColor: Colors.white),
   // INPUT FIELD
   inputDecorationTheme: InputDecorationTheme(
     prefixIconColor: WriteColors.primary,
