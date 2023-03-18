@@ -13,9 +13,8 @@ class BottomBar extends StatelessWidget {
       width: 414,
       height: 70,
       color: themeManager.themeMode == ThemeMode.dark
-          ? WriteColors.accent
+          ? WriteColors.accent.shade50
           : WriteColors.primary,
-
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [

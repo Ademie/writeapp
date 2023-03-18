@@ -19,7 +19,7 @@ class WriteColors {
   static const int _primaryValue = 0XFFFFA132;
 
   static const MaterialColor accent = MaterialColor(_accentValue, <int, Color>{
-    50: Color.fromRGBO(75, 75, 74, 1),
+    50: Color.fromARGB(255, 18, 18, 17),
     100: Color.fromRGBO(158, 158, 158, .2),
     200: Color.fromRGBO(158, 158, 158, .3),
     300: Color.fromRGBO(158, 158, 158, .4),
