@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:writeapp/screens/overviewwidgets/tab_contents.dart';
+import 'package:writeapp/screens/overviewwidgets/tab_folders.dart';
+import 'package:writeapp/screens/overviewwidgets/tab_notes.dart';
 import 'package:writeapp/theme/colors.dart';
 
 class TabControllerChild extends StatelessWidget {
@@ -29,8 +30,8 @@ class TabControllerChild extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 0.75,
             padding: EdgeInsets.only(bottom: 100),
             child: TabBarView(children: [
-              TabContents(),
-              TabContents(),
+              TabNotes(),
+              TabFolders(),
             ]))
       ],
     );

@@ -3,8 +3,8 @@ import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
 import 'package:writeapp/theme/colors.dart';
 
-class TabContents extends StatelessWidget {
-  const TabContents({
+class TabNotes extends StatelessWidget {
+  const TabNotes({
     super.key,
   });
 
