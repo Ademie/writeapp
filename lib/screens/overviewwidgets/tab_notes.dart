@@ -15,8 +15,8 @@ class TabNotes extends StatelessWidget {
       child: StaggeredGridView.countBuilder(
         staggeredTileBuilder: (index) =>
             StaggeredTile.count(2, index.isEven ? 3 : 2.5),
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 8,
+        mainAxisSpacing: 15,
+        crossAxisSpacing: 15,
         crossAxisCount: 4,
         itemCount: 50,
         itemBuilder: (context, index) => Container(

@@ -13,8 +13,8 @@ class TabFolders extends StatelessWidget {
       padding: EdgeInsets.all(20),
       child: GridView.count(
         crossAxisCount: 2,
-        mainAxisSpacing: 12,
-        crossAxisSpacing: 12,
+        mainAxisSpacing: 15,
+        crossAxisSpacing: 15,
         children: [
           Container(
             padding: EdgeInsets.all(10),
