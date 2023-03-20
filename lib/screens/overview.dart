@@ -17,7 +17,7 @@ class _OverviewState extends State<Overview> {
   Widget build(BuildContext context) {
     final double mediaHeight = MediaQuery.of(context).size.height;
     return Center(
-      child: Container(
+      child: SizedBox(
         width: 414,
         height: mediaHeight,
         child: Scaffold(
@@ -26,7 +26,7 @@ class _OverviewState extends State<Overview> {
               children: [
                 TopBar(),
                 SizedBox(
-                  height: mediaHeight - 200,
+                  height: mediaHeight,
                   child: ListView(
                     children: [
                       SearchBar(),

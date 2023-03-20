@@ -27,8 +27,8 @@ class TabControllerChild extends StatelessWidget {
           ],
         ),
         Container(
-            height: MediaQuery.of(context).size.height * 0.75,
-            padding: EdgeInsets.only(bottom: 100),
+            height: MediaQuery.of(context).size.height,
+            padding: EdgeInsets.only(bottom: 250),
             child: TabBarView(children: [
               TabNotes(),
               TabFolders(),

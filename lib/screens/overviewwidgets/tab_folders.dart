@@ -9,6 +9,7 @@ class TabFolders extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 600,
       padding: EdgeInsets.all(20),
       child: GridView.count(
         crossAxisCount: 2,
@@ -24,7 +25,7 @@ class TabFolders extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(Icons.notes_outlined, size: 38),
+                Icon(Icons.notes_outlined, size: 40),
                 Text('My Notes'),
               ],
             ),
@@ -33,12 +34,12 @@ class TabFolders extends StatelessWidget {
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: WriteColors.primary),
+                color: WriteColors.accent.shade200),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(Icons.brush_outlined, size: 38),
+                Icon(Icons.brush_outlined, size: 40),
                 Text('Design'),
               ],
             ),
@@ -47,12 +48,12 @@ class TabFolders extends StatelessWidget {
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: WriteColors.primary),
+                color: WriteColors.accent.shade200),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(Icons.notes_outlined, size: 38),
+                Icon(Icons.notes_outlined, size: 40),
                 Text('Projects'),
               ],
             ),
@@ -61,12 +62,12 @@ class TabFolders extends StatelessWidget {
             padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: WriteColors.primary),
+                color: WriteColors.accent.shade200),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Icon(Icons.check, size: 38),
+                Icon(Icons.check, size: 40),
                 Text('To do list'),
               ],
             ),
