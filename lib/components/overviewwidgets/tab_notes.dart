@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
 import 'package:writeapp/screens/addnotes.dart';
-import 'package:writeapp/screens/overviewwidgets/bottom_bar.dart';
+import 'package:writeapp/components/overviewwidgets/bottom_bar.dart';
 import 'package:writeapp/theme/colors.dart';
 
 class TabNotes extends StatelessWidget {

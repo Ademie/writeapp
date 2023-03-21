@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:writeapp/screens/overviewwidgets/search_bar.dart';
-import 'package:writeapp/screens/overviewwidgets/tab_controller.dart';
-import 'package:writeapp/screens/overviewwidgets/top_bar.dart';
+import 'package:writeapp/components/overviewwidgets/search_bar.dart';
+import 'package:writeapp/components/overviewwidgets/tab_controller.dart';
+import 'package:writeapp/components/overviewwidgets/top_bar.dart';
 
 class Overview extends StatefulWidget {
   const Overview({super.key});

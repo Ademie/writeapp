@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:writeapp/screens/overviewwidgets/tab_folders.dart';
-import 'package:writeapp/screens/overviewwidgets/tab_notes.dart';
+import 'package:writeapp/components/overviewwidgets/tab_folders.dart';
+import 'package:writeapp/components/overviewwidgets/tab_notes.dart';
 import 'package:writeapp/theme/colors.dart';
 
 class TabControllerChild extends StatelessWidget {
