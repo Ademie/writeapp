@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:writeapp/components/noteswidgets/controls.dart';
 import 'package:writeapp/components/noteswidgets/controls_panel.dart';
+import 'package:writeapp/components/noteswidgets/notes_title.dart';
 import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
@@ -11,6 +13,10 @@ class AddNotes extends StatefulWidget {
 }
 
 class _AddNotesState extends State<AddNotes> {
+  TextEditingController _editingController = TextEditingController();
+  List<String> _history = [];
+  int _historyIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     final double mediaHeight = MediaQuery.of(context).size.height;
@@ -20,7 +26,6 @@ class _AddNotesState extends State<AddNotes> {
             height: mediaHeight,
             padding: EdgeInsets.only(
               bottom: 0,
-              // top: 15,
             ),
             child: Scaffold(
               appBar: AppBar(
@@ -29,7 +34,22 @@ class _AddNotesState extends State<AddNotes> {
               ),
               body: ListView(
                 children: [
-                  ControlsPanel(),
+                  ControlsPanel(
+                    children: [
+                      Controls(
+                        icon: Icons.settings_backup_restore_outlined,
+                        action: canUndo() ? undo : null,
+                      ),
+                      Controls(
+                        icon: Icons.refresh_outlined,
+                        action: canRedo() ? redo : null,
+                      ),
+                      Controls(
+                        icon: Icons.check,
+                        action: () {},
+                      ),
+                    ],
+                  ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     height: mediaHeight - 200,
@@ -37,57 +57,31 @@ class _AddNotesState extends State<AddNotes> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          height: 100,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              TextFormField(
-                                style: TextStyle(
-                                    fontSize: 27,
-                                    color:
-                                        themeManager.themeMode == ThemeMode.dark
-                                            ? Colors.white
-                                            : WriteColors.accent),
-                                decoration: InputDecoration(
-                                  hintText: 'Design Principles',
-                                  border: InputBorder.none,
-                                  filled: false,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20,
-                                child: TextFormField(
-                                  style: TextStyle(
-                                      fontSize: 14,
-                                      color: themeManager.themeMode ==
-                                              ThemeMode.dark
+                        NotesTitle(),
+                        Flexible(
+                          child: GestureDetector(
+                            onTap: () {
+                              FocusScope.of(context).requestFocus(FocusNode());
+                            },
+                            child: TextFormField(
+                              controller: _editingController,
+                              onChanged: (value) {
+                                addToHistory(value);
+                              },
+                              keyboardType: TextInputType.multiline,
+                              minLines: 1,
+                              maxLines: null,
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  color:
+                                      themeManager.themeMode == ThemeMode.dark
                                           ? Colors.white
                                           : WriteColors.accent),
-                                  decoration: InputDecoration(
-                                    hintText: 'Sat, 12:05 | 2.451 Characters',
-                                    border: InputBorder.none,
-                                    filled: false,
-                                  ),
-                                ),
+                              decoration: InputDecoration(
+                                hintText: "Text here...",
+                                border: InputBorder.none,
+                                filled: false,
                               ),
-                            ],
-                          ),
-                        ),
-                        Flexible(
-                          child: TextFormField(
-                            keyboardType: TextInputType.multiline,
-                            minLines: 1,
-                            maxLines: null,
-                            style: TextStyle(
-                                fontSize: 18,
-                                color: themeManager.themeMode == ThemeMode.dark
-                                    ? Colors.white
-                                    : WriteColors.accent),
-                            decoration: InputDecoration(
-                              hintText: "Text here...",
-                              border: InputBorder.none,
-                              filled: false,
                             ),
                           ),
                         )
@@ -97,5 +91,35 @@ class _AddNotesState extends State<AddNotes> {
                 ],
               ),
             )));
+  }
+
+  bool canUndo() {
+    return _historyIndex > 0;
+  }
+
+  bool canRedo() {
+    return _historyIndex < _history.length - 1;
+  }
+
+  void addToHistory(String text) {
+    if (_historyIndex < _history.length - 1) {
+      _history.removeRange(_historyIndex + 1, _history.length);
+    }
+    _history.add(text);
+    _historyIndex = _history.length - 1;
+  }
+
+  void undo() {
+    setState(() {
+      _historyIndex--;
+      _editingController.text = _history[_historyIndex];
+    });
+  }
+
+  void redo() {
+    setState(() {
+      _historyIndex++;
+      _editingController.text = _history[_historyIndex];
+    });
   }
 }
