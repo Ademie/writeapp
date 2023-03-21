@@ -10,7 +10,7 @@ class Controls extends StatelessWidget {
   });
 
   final IconData? icon;
-  final Function? action;
+  final Function()? action;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,9 @@ class Controls extends StatelessWidget {
                   ? Colors.white
                   : WriteColors.accent,
             ),
-            onPressed: () => action,
+            onPressed: action,
+              
+            
           ),
         ));
   }

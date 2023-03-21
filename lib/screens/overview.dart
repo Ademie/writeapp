@@ -18,8 +18,14 @@ class _OverviewState extends State<Overview> {
       child: Container(
         width: 414,
         height: mediaHeight,
-        padding: EdgeInsets.only(bottom: 0, top: 15),
+        padding: EdgeInsets.only(
+          bottom: 0,
+          // top: 15,
+        ),
         child: Scaffold(
+          appBar: AppBar(
+            elevation: 0,
+          ),
           body: ListView(
             children: [
               TopBar(),

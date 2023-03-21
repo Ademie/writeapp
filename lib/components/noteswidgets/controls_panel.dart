@@ -15,7 +15,7 @@ class ControlsPanel extends StatelessWidget {
         children: [
           Controls(
             icon: Icons.arrow_back_ios_new,
-            action: () {},
+            action: () => Navigator.pop(context),
           ),
           SizedBox(
             width: 200,
@@ -42,4 +42,3 @@ class ControlsPanel extends StatelessWidget {
     );
   }
 }
-
