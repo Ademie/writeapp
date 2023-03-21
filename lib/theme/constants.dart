@@ -18,6 +18,8 @@ ThemeData lightTheme = ThemeData(
       backgroundColor: WriteColors.accent, foregroundColor: Colors.white),
   iconTheme: IconThemeData(color: WriteColors.accent, size: 35),
   // INPUT FIELD
+  
+  
   inputDecorationTheme: InputDecorationTheme(
     prefixIconColor: WriteColors.accent,
     border: OutlineInputBorder(
@@ -26,6 +28,7 @@ ThemeData lightTheme = ThemeData(
     ),
     filled: true,
     fillColor: WriteColors.primary.shade300,
+    
   ),
   // TABBAR
   tabBarTheme: TabBarTheme(

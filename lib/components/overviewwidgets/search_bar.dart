@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:writeapp/theme/colors.dart';
+import 'package:writeapp/theme_manager.dart';
 
 
 class SearchBar extends StatelessWidget {
@@ -15,6 +17,9 @@ class SearchBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
+        style: TextStyle(
+          color: themeManager.themeMode == ThemeMode.dark ?  Colors.white : WriteColors.accent
+        ),
         decoration: InputDecoration(
           hintText: 'Search Your Notes',
           prefixIcon: Padding(
