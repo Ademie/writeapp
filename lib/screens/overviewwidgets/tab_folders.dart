@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:writeapp/screens/overviewwidgets/bottom_bar.dart';
 import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:writeapp/screens/addnotes.dart';
 import 'package:writeapp/screens/overview.dart';
 import 'package:writeapp/theme/constants.dart';
 import 'package:writeapp/theme_manager.dart';
@@ -40,7 +41,8 @@ class MyAppState extends State<MyApp> {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeManager.themeMode,
-      home: Overview(),
+      // home: Overview(),
+      home: AddNotes(),
     );
   }
 }
