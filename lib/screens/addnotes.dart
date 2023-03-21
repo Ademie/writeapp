@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:writeapp/components/noteswidgets/controls.dart';
+import 'package:writeapp/components/noteswidgets/controls_panel.dart';
 import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
@@ -25,38 +26,7 @@ class _AddNotesState extends State<AddNotes> {
             child: Scaffold(
               body: ListView(
                 children: [
-                  Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Controls(
-                          icon: Icons.arrow_back_ios_new,
-                          action: () {},
-                        ),
-                        SizedBox(
-                          width: 200,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Controls(
-                                icon: Icons.settings_backup_restore_outlined,
-                                action: () {},
-                              ),
-                              Controls(
-                                icon: Icons.refresh_outlined,
-                                action: () {},
-                              ),
-                              Controls(
-                                icon: Icons.check,
-                                action: () {},
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  )
+                  ControlsPanel()
                 ],
               ),
             )));
