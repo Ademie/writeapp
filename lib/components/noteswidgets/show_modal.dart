@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:writeapp/theme/colors.dart';
-import 'package:writeapp/theme_manager.dart';
+import 'package:writeapp/components/noteswidgets/character_count.dart';
+import 'package:writeapp/components/noteswidgets/modal_action_tile.dart';
+
 
 class ShowModal extends StatelessWidget {
   const ShowModal({
@@ -12,80 +13,45 @@ class ShowModal extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20))),
-      height: 400,
+              topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+      height: 300,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  IconButton(
-                    icon: Icon(
-                        Icons.delete_outline_rounded),
-                    onPressed: () {},
-                  ),
-                  Text('Delete'),
-                ],
+              ModalActionTile(
+                action: () {},
+                label: "Delete",
+                icon: Icons.delete_outline_rounded,
               ),
-              Row(
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.copy_rounded),
-                    onPressed: () {},
-                  ),
-                  Text('Duplicate'),
-                ],
+              ModalActionTile(
+                action: () {},
+                label: "Duplicate",
+                icon: Icons.copy_rounded,
               ),
-              Row(
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.share),
-                    onPressed: () {},
-                  ),
-                  Text('Share'),
-                ],
+              ModalActionTile(
+                action: () {},
+                label: "Share",
+                icon: Icons.share,
               ),
-              Row(
-                children: [
-                  IconButton(
-                    icon:
-                        Icon(Icons.label_outline_rounded),
-                    onPressed: () {},
-                  ),
-                  Text('Label'),
-                ],
+              ModalActionTile(
+                action: () {},
+                label: "Label",
+                icon: Icons.label,
               ),
             ],
           ),
           Row(
-            mainAxisAlignment:
-                MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
                 icon: Icon(Icons.add),
                 onPressed: () {},
               ),
-              SizedBox(
-                height: 20,
-                width: 200,
-                child: TextFormField(
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: themeManager.themeMode ==
-                              ThemeMode.dark
-                          ? Colors.white
-                          : WriteColors.accent),
-                  decoration: InputDecoration(
-                    hintText:
-                        'Sat, 12:05 | 2.451 Characters',
-                    border: InputBorder.none,
-                    filled: false,
-                  ),
-                ),
-              ),
+              CharacterCount(),
               IconButton(
                 icon: Icon(Icons.cancel_outlined),
                 onPressed: () {},
@@ -97,3 +63,4 @@ class ShowModal extends StatelessWidget {
     );
   }
 }
+
