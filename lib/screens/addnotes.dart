@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:writeapp/components/noteswidgets/controls.dart';
 import 'package:writeapp/components/noteswidgets/controls_panel.dart';
 import 'package:writeapp/components/noteswidgets/notes_title.dart';
+import 'package:writeapp/components/noteswidgets/show_modal.dart';
 import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
@@ -84,11 +85,31 @@ class _AddNotesState extends State<AddNotes> {
                               ),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
                 ],
+              ),
+              floatingActionButton: SizedBox(
+                height: 70,
+                width: 70,
+                child: FloatingActionButton(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  onPressed: () {
+                    showModalBottomSheet(
+                        context: context,
+                        elevation: 0,
+                        builder: (BuildContext index) {
+                          return ShowModal();
+                        });
+                  },
+                  child: Icon(
+                    Icons.more,
+                    size: 35,
+                  ),
+                ),
               ),
             )));
   }
@@ -123,3 +144,4 @@ class _AddNotesState extends State<AddNotes> {
     });
   }
 }
+
