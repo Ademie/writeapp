@@ -17,10 +17,9 @@ class NotesTitle extends StatelessWidget {
           TextFormField(
             style: TextStyle(
                 fontSize: 27,
-                color:
-                    themeManager.themeMode == ThemeMode.dark
-                        ? Colors.white
-                        : WriteColors.accent),
+                color: themeManager.themeMode == ThemeMode.dark
+                    ? Colors.white
+                    : WriteColors.accent),
             decoration: InputDecoration(
               hintText: 'Design Principles',
               border: InputBorder.none,
@@ -32,8 +31,7 @@ class NotesTitle extends StatelessWidget {
             child: TextFormField(
               style: TextStyle(
                   fontSize: 14,
-                  color: themeManager.themeMode ==
-                          ThemeMode.dark
+                  color: themeManager.themeMode == ThemeMode.dark
                       ? Colors.white
                       : WriteColors.accent),
               decoration: InputDecoration(

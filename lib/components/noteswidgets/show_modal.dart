@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:writeapp/components/noteswidgets/character_count.dart';
 import 'package:writeapp/components/noteswidgets/modal_action_tile.dart';
 
-
 class ShowModal extends StatelessWidget {
   const ShowModal({
     super.key,
@@ -48,13 +47,15 @@ class ShowModal extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               IconButton(
-                icon: Icon(Icons.add),
+                icon: Icon(Icons.mic),
                 onPressed: () {},
               ),
               CharacterCount(),
               IconButton(
                 icon: Icon(Icons.cancel_outlined),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               )
             ],
           )
@@ -63,4 +64,3 @@ class ShowModal extends StatelessWidget {
     );
   }
 }
-

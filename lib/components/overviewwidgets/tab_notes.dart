@@ -43,9 +43,8 @@ class TabNotes extends StatelessWidget {
         width: 70,
         child: FloatingActionButton(
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) =>
-              AddNotes()
-            ));
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => AddNotes()));
           },
           child: Icon(
             Icons.add,
