@@ -101,6 +101,9 @@ class _AddNotesState extends State<AddNotes> {
                     showModalBottomSheet(
                         context: context,
                         elevation: 0,
+                        constraints: BoxConstraints(
+                          maxWidth: 420
+                        ),
                         builder: (BuildContext index) {
                           return ShowModal();
                         });
