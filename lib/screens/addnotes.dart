@@ -24,7 +24,7 @@ class _AddNotesState extends State<AddNotes> {
     return Center(
         child: Container(
             width: 414,
-            // height: 600,
+            height: 600,
             padding: EdgeInsets.only(
               bottom: 0,
             ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:writeapp/screens/overview.dart';
+import 'package:writeapp/screens/sign_up.dart';
 import 'package:writeapp/theme/constants.dart';
 import 'package:writeapp/theme_manager.dart';
+
+
 
 void main() {
   runApp(MyApp());
@@ -40,7 +43,8 @@ class MyAppState extends State<MyApp> {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeManager.themeMode,
-      home: Overview(),
+      // home: Overview(),
+      home: SignUp(),
       // home: AddNotes(),
       // home: TextEditorPage(),
     );
