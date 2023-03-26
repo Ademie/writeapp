@@ -10,7 +10,6 @@ class TopBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 414,
-      height: 50,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

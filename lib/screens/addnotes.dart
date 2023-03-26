@@ -20,11 +20,11 @@ class _AddNotesState extends State<AddNotes> {
 
   @override
   Widget build(BuildContext context) {
-    final double mediaHeight = MediaQuery.of(context).size.height;
+    
     return Center(
         child: Container(
             width: 414,
-            height: mediaHeight,
+            // height: 600,
             padding: EdgeInsets.only(
               bottom: 0,
             ),
@@ -53,7 +53,7 @@ class _AddNotesState extends State<AddNotes> {
                   ),
                   Container(
                     padding: EdgeInsets.symmetric(horizontal: 20),
-                    height: mediaHeight - 200,
+                    height: 600,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,6 +101,9 @@ class _AddNotesState extends State<AddNotes> {
                     showModalBottomSheet(
                         context: context,
                         elevation: 0,
+                        constraints: BoxConstraints(
+                          maxWidth: 420
+                        ),
                         builder: (BuildContext index) {
                           return ShowModal();
                         });

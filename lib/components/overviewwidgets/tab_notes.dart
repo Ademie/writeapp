@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
-import 'package:writeapp/screens/addnotes.dart';
-import 'package:writeapp/components/overviewwidgets/bottom_bar.dart';
 import 'package:writeapp/theme/colors.dart';
 
 class TabNotes extends StatelessWidget {
@@ -14,7 +12,6 @@ class TabNotes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height,
         padding: EdgeInsets.all(20),
         child: StaggeredGridView.countBuilder(
           staggeredTileBuilder: (index) =>
@@ -36,23 +33,7 @@ class TabNotes extends StatelessWidget {
             ),
           ),
         ),
-      ),
-      bottomSheet: BottomBar(),
-      floatingActionButton: SizedBox(
-        height: 70,
-        width: 70,
-        child: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) =>
-              AddNotes()
-            ));
-          },
-          child: Icon(
-            Icons.add,
-            size: 35,
-          ),
-        ),
-      ),
+      ),      
     );
   }
 }
