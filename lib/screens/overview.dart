@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:writeapp/components/overviewwidgets/folders_tab.dart';
+import 'package:writeapp/components/overviewwidgets/folders_tab_bar.dart';
 import 'package:writeapp/components/overviewwidgets/notes_tab.dart';
 import 'package:writeapp/components/overviewwidgets/notes_tab_bar.dart';
 import 'package:writeapp/fireauth/auth.dart';
@@ -49,7 +50,6 @@ class _OverviewState extends State<Overview> {
               SearchBar(),
               DefaultTabController(
                 length: 2,
-                // child: TabControllerChild(),
                 child: Column(
                   children: [
                     TabBar(
@@ -75,34 +75,30 @@ class _OverviewState extends State<Overview> {
                     Container(
                       constraints:
                           BoxConstraints(minHeight: 600, maxHeight: 700),
-                      child: TabBarView(children: [
-                        NotesTab(),
-                        FoldersTab()
-
-                        
-                      ]),
+                      child: TabBarView(children: [NotesTab(), FoldersTab()]),
                     ),
                   ],
                 ),
               ),
             ],
           ),
-          // bottomSheet: BottomBar(),
-          bottomSheet: _tabIndex == 0 ? NotesTabBar() : Text('fuck you'),
-          floatingActionButton: _tabIndex == 0 ? SizedBox(
-            height: 70,
-            width: 70,
-            child: FloatingActionButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AddNotes()));
-              },
-              child: Icon(
-                Icons.add,
-                size: 35,
-              ),
-            ),
-          ):null,
+          bottomSheet: _tabIndex == 0 ? NotesTabBar() : FoldersTabBar(),
+          floatingActionButton: _tabIndex == 0
+              ? SizedBox(
+                  height: 70,
+                  width: 70,
+                  child: FloatingActionButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => AddNotes()));
+                    },
+                    child: Icon(
+                      Icons.add,
+                      size: 35,
+                    ),
+                  ),
+                )
+              : null,
         ),
       ),
     );
