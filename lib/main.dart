@@ -43,8 +43,8 @@ class MyAppState extends State<MyApp> {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeManager.themeMode,
-      // home: Overview(),
-      home: SignUp(),
+      home: Overview(),
+      // home: SignUp(),
       // home: AddNotes(),
       // home: TextEditorPage(),
     );

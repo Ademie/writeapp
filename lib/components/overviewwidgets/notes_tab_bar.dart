@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
-class BottomBar extends StatelessWidget {
-  const BottomBar({
+class NotesTabBar extends StatelessWidget {
+  const NotesTabBar({
     super.key,
   });
 

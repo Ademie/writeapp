@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
-class TabFolders extends StatelessWidget {
-  const TabFolders({
+class FoldersTab extends StatelessWidget {
+  const FoldersTab({
     super.key,
   });
 

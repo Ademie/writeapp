@@ -7,22 +7,37 @@ class SignUp extends StatefulWidget {
   State<SignUp> createState() => _SignUpState();
 }
 
+late int tabIndex = 0;
+
+Widget _button() {
+  return ElevatedButton(onPressed: () {}, child: Text('Yo'));
+}
+
 class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text('Sign Up'),
-            TextField(),
-            TextField(),
-            ElevatedButton(onPressed: () {}, child: Text('Sign Up')),
-            Text('Already have an account?'),
-            TextButton(onPressed: () {}, child: Text('Sign In'))
-          ],
+    return Center(
+      child: SizedBox(
+        width: 414,
+        child: Scaffold(
+          appBar: AppBar(),
+          body: DefaultTabController(
+            length: 2,
+            child: TabBar(
+              tabs: [
+                Tab(text: 'Sign Up'),
+                Tab(
+                  text: 'Sign In',
+                )
+              ],
+              onTap: (value) {
+                setState(() {
+                  tabIndex = value;
+                });
+              },
+            ),
+          ),
+          bottomSheet: tabIndex == 1 ? _button() : null,
         ),
       ),
     );
