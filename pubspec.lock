@@ -114,7 +114,7 @@ packages:
     source: hosted
     version: "5.2.10"
   firebase_core:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_core
       sha256: "75f747cafd7cbd6c00b908e3a7aa59fc31593d46ba8165d9ee8a79e69464a394"
@@ -160,6 +160,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  go_router:
+    dependency: "direct main"
+    description:
+      name: go_router
+      sha256: "432409518740645ce7f28802171b78783197d01149fad44f9b8ae55f40277139"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.5.0"
   google_fonts:
     dependency: "direct main"
     description:
@@ -208,6 +216,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  logging:
+    dependency: transitive
+    description:
+      name: logging
+      sha256: "04094f2eb032cbb06c6f6e8d3607edcfcb0455e2bb6cbc010cb01171dcb64e6d"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.1"
   matcher:
     dependency: transitive
     description:
@@ -415,4 +431,4 @@ packages:
     version: "1.0.0"
 sdks:
   dart: ">=2.19.4 <3.0.0"
-  flutter: ">=3.0.0"
+  flutter: ">=3.3.0"

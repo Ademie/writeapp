@@ -1,20 +1,36 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:writeapp/screens/overview.dart';
 import 'package:writeapp/screens/sign_up.dart';
 import 'package:writeapp/theme/constants.dart';
 import 'package:writeapp/theme_manager.dart';
 
-
-
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
+
+final GoRouter _router = GoRouter(routes: <RouteBase>[
+  GoRoute(
+      path: '/',
+      builder: (BuildContext context, GoRouterState state) {
+        return Overview();
+      },
+      routes: <RouteBase>[
+        GoRoute(
+            path: 'signup',
+            builder: (context, state) {
+              return SignUp();
+            })
+      ])
+]);
 
 class MyApp extends StatefulWidget {
   @override
   MyAppState createState() => MyAppState();
 }
-
 
 class MyAppState extends State<MyApp> {
   @override
@@ -44,10 +60,6 @@ class MyAppState extends State<MyApp> {
       darkTheme: darkTheme,
       themeMode: themeManager.themeMode,
       home: Overview(),
-      // home: SignUp(),
-      // home: AddNotes(),
-      // home: TextEditorPage(),
     );
   }
 }
-

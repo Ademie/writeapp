@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:writeapp/fireauth/auth.dart';
+import 'package:go_router/go_router.dart';
+import 'package:writeapp/screens/overview.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -9,9 +12,8 @@ class SignUp extends StatefulWidget {
 
 late int tabIndex = 0;
 
-Widget _button() {
-  return ElevatedButton(onPressed: () {}, child: Text('Yo'));
-}
+TextEditingController email = TextEditingController();
+TextEditingController password = TextEditingController();
 
 class _SignUpState extends State<SignUp> {
   @override
@@ -20,24 +22,69 @@ class _SignUpState extends State<SignUp> {
       child: SizedBox(
         width: 414,
         child: Scaffold(
-          appBar: AppBar(),
+          appBar: AppBar(
+            elevation: 0,
+          ),
           body: DefaultTabController(
             length: 2,
-            child: TabBar(
-              tabs: [
-                Tab(text: 'Sign Up'),
-                Tab(
-                  text: 'Sign In',
+            child: Column(
+              children: [
+                TabBar(
+                  tabs: [
+                    Tab(text: 'Sign Up'),
+                    Tab(
+                      text: 'Sign In',
+                    )
+                  ],
+                  onTap: (value) {
+                    setState(() {
+                      tabIndex = value;
+                    });
+                  },
+                ),
+                Expanded(
+                  child: TabBarView(children: [
+                    Column(
+                      children: [
+                        Padding(
+                            padding: EdgeInsets.all(10),
+                            child: TextField(
+                              controller: email,
+                              decoration: InputDecoration(
+                                  hintText: 'example@gmail.com',
+                                  prefixIcon: Icon(Icons.mail_outline)),
+                            )),
+                        Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: TextField(
+                            controller: password,
+                            decoration: InputDecoration(
+                                hintText: 'password',
+                                prefixIcon: Icon(Icons.lock_outline)),
+                          ),
+                        ),
+                        ElevatedButton(
+                            onPressed: () {
+                              Auth().signIn(
+                                  email: email.text, password: password.text);
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (_) {
+                                return Overview();
+                              }));
+                            },
+                            child: Text('Sign Up'))
+                      ],
+                    ),
+                    Container(
+                      child: Text('Hello'),
+                    )
+                  ]),
                 )
               ],
-              onTap: (value) {
-                setState(() {
-                  tabIndex = value;
-                });
-              },
             ),
           ),
-          bottomSheet: tabIndex == 1 ? _button() : null,
+          resizeToAvoidBottomInset: true,
+          // bottomSheet: tabIndex == 1 ? _button() : null,
         ),
       ),
     );

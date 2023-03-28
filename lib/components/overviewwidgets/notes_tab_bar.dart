@@ -21,24 +21,31 @@ class NotesTabBar extends StatelessWidget {
           SizedBox(
             width: 300,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.check_circle_outline),
+                Container(
+                  padding: EdgeInsets.only(left: 10),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.logout_outlined,),
+                  ),
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.mic_none_rounded),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.camera_alt_outlined),
-                ),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.edit_note_rounded),
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.mic_none_rounded),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.camera_alt_outlined),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.edit_note_rounded),
+                    ),
+                  ],
                 ),
               ],
             ),
