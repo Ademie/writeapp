@@ -1,5 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:writeapp/components/noteswidgets/controls.dart';
 import 'package:writeapp/components/noteswidgets/controls_panel.dart';
 import 'package:writeapp/components/noteswidgets/notes_title.dart';
 import 'package:writeapp/components/noteswidgets/show_modal.dart';
@@ -14,17 +14,21 @@ class AddNotes extends StatefulWidget {
 }
 
 class _AddNotesState extends State<AddNotes> {
-  TextEditingController _editingController = TextEditingController();
   List<String> _history = [];
   int _historyIndex = 0;
+  
+  TextEditingController _titleController = TextEditingController();
+  TextEditingController _contentController = TextEditingController();
+  
+  
+
+  CollectionReference ref = FirebaseFirestore.instance.collection('notes');
 
   @override
   Widget build(BuildContext context) {
-    
     return Center(
         child: Container(
             width: 414,
-            height: 600,
             padding: EdgeInsets.only(
               bottom: 0,
             ),
@@ -37,18 +41,32 @@ class _AddNotesState extends State<AddNotes> {
                 children: [
                   ControlsPanel(
                     children: [
-                      Controls(
-                        icon: Icons.settings_backup_restore_outlined,
-                        action: canUndo() ? undo : null,
+                      IconButton(
+                        onPressed: () {
+                          canUndo() ? undo() : null;
+                        },
+                        icon: Icon(Icons.settings_backup_restore_rounded),
                       ),
-                      Controls(
-                        icon: Icons.refresh_outlined,
-                        action: canRedo() ? redo : null,
+                      IconButton(
+                        onPressed: () {
+                          canRedo() ? redo() : null;
+                        },
+                        icon: Icon(
+                          Icons.refresh_rounded,
+                        ),
                       ),
-                      Controls(
-                        icon: Icons.check,
-                        action: () {},
+                       IconButton(
+                        onPressed: () {
+                          ref.add({
+                            'title': _titleController.text,
+                            'content': _contentController.text
+                          }).whenComplete(() => Navigator.pop(context));
+                        },
+                        icon: Icon(
+                          Icons.check_circle_outline_rounded,
+                        ),
                       ),
+                 
                     ],
                   ),
                   Container(
@@ -58,14 +76,14 @@ class _AddNotesState extends State<AddNotes> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        NotesTitle(),
+                        NotesTitle(titleController: _titleController),
                         Flexible(
                           child: GestureDetector(
                             onTap: () {
                               FocusScope.of(context).requestFocus(FocusNode());
                             },
                             child: TextFormField(
-                              controller: _editingController,
+                              controller: _contentController,
                               onChanged: (value) {
                                 addToHistory(value);
                               },
@@ -101,9 +119,7 @@ class _AddNotesState extends State<AddNotes> {
                     showModalBottomSheet(
                         context: context,
                         elevation: 0,
-                        constraints: BoxConstraints(
-                          maxWidth: 420
-                        ),
+                        constraints: BoxConstraints(maxWidth: 420),
                         builder: (BuildContext index) {
                           return ShowModal();
                         });
@@ -136,15 +152,14 @@ class _AddNotesState extends State<AddNotes> {
   void undo() {
     setState(() {
       _historyIndex--;
-      _editingController.text = _history[_historyIndex];
+      _contentController.text = _history[_historyIndex];
     });
   }
 
   void redo() {
     setState(() {
       _historyIndex++;
-      _editingController.text = _history[_historyIndex];
+      _contentController.text = _history[_historyIndex];
     });
   }
 }
-

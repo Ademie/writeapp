@@ -4,8 +4,9 @@ import 'package:writeapp/theme_manager.dart';
 
 class NotesTitle extends StatelessWidget {
   const NotesTitle({
-    super.key,
+    super.key, required this.titleController,
   });
+  final TextEditingController titleController;
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +16,7 @@ class NotesTitle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           TextFormField(
+            controller: titleController,
             style: TextStyle(
                 fontSize: 27,
                 color: themeManager.themeMode == ThemeMode.dark
