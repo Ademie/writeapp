@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:writeapp/fireauth/auth_changes.dart';
 import 'package:writeapp/screens/overview.dart';
-import 'package:writeapp/screens/sign_up.dart';
 import 'package:writeapp/theme/constants.dart';
 import 'package:writeapp/theme_manager.dart';
 
@@ -14,17 +14,11 @@ Future<void> main() async {
 
 final GoRouter _router = GoRouter(routes: <RouteBase>[
   GoRoute(
-      path: '/',
-      builder: (BuildContext context, GoRouterState state) {
-        return Overview();
-      },
-      routes: <RouteBase>[
-        GoRoute(
-            path: 'signup',
-            builder: (context, state) {
-              return SignUp();
-            })
-      ])
+    path: '/',
+    builder: (BuildContext context, GoRouterState state) {
+      return Overview();
+    },
+  )
 ]);
 
 class MyApp extends StatefulWidget {
@@ -59,7 +53,7 @@ class MyAppState extends State<MyApp> {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeManager.themeMode,
-      home: Overview(),
+      home: AuthChanges(),
     );
   }
 }

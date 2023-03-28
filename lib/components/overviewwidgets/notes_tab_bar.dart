@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:writeapp/fireauth/auth.dart';
 import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
@@ -27,8 +28,12 @@ class NotesTabBar extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.only(left: 10),
                   child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.logout_outlined,),
+                    onPressed: () {
+                      Auth().signOut();
+                    },
+                    icon: Icon(
+                      Icons.logout_outlined,
+                    ),
                   ),
                 ),
                 Row(
