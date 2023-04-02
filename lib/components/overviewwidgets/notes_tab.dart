@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
 import 'package:writeapp/components/overviewwidgets/note_preview.dart';
-
+import 'package:writeapp/fireauth/auth.dart';
 
 class NotesTab extends StatefulWidget {
   const NotesTab({
@@ -14,30 +14,25 @@ class NotesTab extends StatefulWidget {
   State<NotesTab> createState() => _NotesTabState();
 }
 
+String uid = Auth().currentUser!.uid;
+
 class _NotesTabState extends State<NotesTab> {
   @override
   Widget build(BuildContext context) {
-    // final db = FirebaseFirestore.instance;
-    // final ref = db.collection('notes');
     CollectionReference ref = FirebaseFirestore.instance
-      .collection('profile')
-      .doc('userID')
-      .collection('notes');
+        .collection('users')
+        .doc(uid)
+        .collection('notes');
 
     return Scaffold(
       body: StreamBuilder(
           stream: ref.snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-            return Container(
-              padding:
-                  EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 150),
-              child: NotificationListener<ScrollNotification>(
-                onNotification: (scrollNotification) {
-                  if (ScrollNotification is ScrollNotification) {
-                    print('object scrolled');
-                  }
-                  return true;
-                },
+            return SingleChildScrollView(
+              child: Container(
+                width: 400,
+                height: 600,
+                padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 100),
                 child: StaggeredGridView.countBuilder(
                   staggeredTileBuilder: (index) =>
                       StaggeredTile.count(2, index.isEven ? 3 : 2.5),

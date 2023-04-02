@@ -13,18 +13,18 @@ ThemeData lightTheme = ThemeData(
     ),
   ),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: WriteColors.accent, foregroundColor: Colors.white),
+      backgroundColor: WriteColors.primary, foregroundColor: Colors.white),
   iconTheme: IconThemeData(color: WriteColors.accent, size: 35),
   // INPUT FIELD
 
   inputDecorationTheme: InputDecorationTheme(
-    prefixIconColor: WriteColors.accent,
+    prefixIconColor: WriteColors.primary,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(20),
       borderSide: BorderSide.none,
     ),
     filled: true,
-    fillColor: WriteColors.primary.shade300,
+    fillColor: WriteColors.accent.shade200
   ),
   // TABBAR
   tabBarTheme: TabBarTheme(
@@ -51,6 +51,7 @@ ThemeData darkTheme = ThemeData(
     ),
     filled: true,
     fillColor: WriteColors.accent.shade100,
+
   ),
   // TABBAR
   tabBarTheme: TabBarTheme(

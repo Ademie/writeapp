@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:writeapp/components/noteswidgets/controls_panel.dart';
 import 'package:writeapp/components/noteswidgets/notes_title.dart';
 import 'package:writeapp/fireauth/auth.dart';
-import 'package:writeapp/functions/functions.dart';
 import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
@@ -22,21 +20,14 @@ class _AddNotesState extends State<AddNotes> {
   TextEditingController _titleController = TextEditingController();
   TextEditingController _contentController = TextEditingController();
 
-  final User? user = Auth().currentUser;
-  String uid = FirebaseAuth.instance.currentUser!.uid;
-
-  // CollectionReference ref = FirebaseFirestore.instance.collection('notes');
-  // CollectionReference ref = FirebaseFirestore.instance
-  //     .collection('profile')
-  //     .doc(uid)
-  //     .collection('notes');
+  String uid = Auth().currentUser!.uid;
 
   @override
   Widget build(BuildContext context) {
-    // CollectionReference ref = FirebaseFirestore.instance
-    //   .collection('profile')
-    //   .doc(uid)
-    //   .collection('notes');
+    CollectionReference ref = FirebaseFirestore.instance
+        .collection('users')
+        .doc(uid)
+        .collection('notes');
     return Center(
         child: Container(
             width: 414,
@@ -68,13 +59,10 @@ class _AddNotesState extends State<AddNotes> {
                       ),
                       IconButton(
                         onPressed: () {
-                          // ref.add({
-                          //   'title': _titleController.text,
-                          //   'content': _contentController.text
-                          // }).whenComplete(() => Navigator.pop(context));
-                          addNoteForCurrentUser(
-                             
-                          );
+                          ref.add({
+                            'title': _titleController.text,
+                            'content': _contentController.text
+                          }).whenComplete(() => Navigator.pop(context));
                         },
                         icon: Icon(
                           Icons.check_circle_outline_rounded,

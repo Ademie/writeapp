@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:writeapp/fireauth/auth.dart';
+import 'package:writeapp/screens/login_register.dart';
+import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
 class TopBar extends StatelessWidget {
@@ -14,9 +17,17 @@ class TopBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            'Notes',
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          IconButton(
+            color: WriteColors.primary,
+            onPressed: () {
+              Auth().signOut().whenComplete(() =>
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return LoginRegister();
+                  })));
+            },
+            icon: Icon(
+              Icons.logout_outlined,
+            ),
           ),
           Switch.adaptive(
               value: themeManager.themeMode == ThemeMode.dark,

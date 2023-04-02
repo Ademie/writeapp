@@ -25,8 +25,10 @@ class NotePreview extends StatelessWidget {
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color:
-                index == 0 ? WriteColors.primary : WriteColors.accent.shade200),
+            color:  WriteColors.accent.shade200
+            ),
+            // color:
+            //     index == 0 ? WriteColors.primary : WriteColors.accent.shade200),
         child: ListView(
           children: [
             Text(

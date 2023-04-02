@@ -2,44 +2,41 @@ name: writeapp
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.4 <3.0.0'
-
+  sdk: ">=2.19.4 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
- 
-
+  cloud_firestore: ^4.4.5
   cupertino_icons: ^1.0.2
-  material_color_generator: ^1.1.0
-  staggered_grid_view_flutter: ^0.0.4
-  google_fonts: ^4.0.3
+  easy_splash_screen: null
   firebase_auth: ^4.3.0
   firebase_core: ^2.8.0
   go_router: ^6.5.0
-  cloud_firestore: ^4.4.5
+  google_fonts: ^4.0.3
+  material_color_generator: ^1.1.0
   provider: ^6.0.5
-  easy_splash_screen:
-  
+  staggered_grid_view_flutter: ^0.0.4
+  flutter_native_splash: ^2.2.19
+
+flutter_native_splash:
+  android: true
+  ios: true
+  color: "#CC4F4F"
+  image: "assets/writeapp.png"
+
 
 dev_dependencies:
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
 
-
-  
-  flutter_lints: ^2.0.0
-
-
 flutter:
-
-
   # the material Icons class.
   uses-material-design: true
 
@@ -47,13 +44,10 @@ flutter:
   assets:
     - assets/writeapp.png
     # - images/a_dot_ham.jpeg
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

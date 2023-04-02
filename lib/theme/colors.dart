@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
 class WriteColors {
-  
-
   static const MaterialColor primary =
       MaterialColor(_primaryValue, <int, Color>{
     50: Color.fromRGBO(255, 159, 50, .1),
-    100: Color.fromRGBO(255, 213, 164, 1),
+    100: Color.fromRGBO(255, 255, 255, 1),
     200: Color.fromRGBO(255, 159, 50, .3),
-    300: Color.fromRGBO(255, 159, 50, .4),
+    300: Color.fromRGBO(204, 79, 79, .4),
     400: Color.fromRGBO(255, 159, 50, .5),
     500: Color(_primaryValue),
     600: Color.fromRGBO(255, 159, 50, .6),
@@ -16,7 +14,7 @@ class WriteColors {
     800: Color.fromRGBO(255, 159, 50, .8),
     900: Color.fromRGBO(255, 159, 50, .9),
   });
-  static const int _primaryValue = 0XFFFFA132;
+  static const int _primaryValue = 0XFFCC4F4F;
 
   static const MaterialColor accent = MaterialColor(_accentValue, <int, Color>{
     50: Color.fromARGB(255, 18, 18, 17),

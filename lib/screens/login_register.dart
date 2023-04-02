@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 import 'package:writeapp/fireauth/auth.dart';
-import 'package:writeapp/screens/overview.dart';
 import 'package:writeapp/theme/colors.dart';
 
 class LoginRegister extends StatefulWidget {
@@ -25,9 +24,6 @@ class _LoginRegisterState extends State<LoginRegister> {
   Future<void> register() async {
     try {
       await Auth().signUp(email: email.text, password: password.text);
-      ref.add({
-        'userID': email.text,
-      });
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
