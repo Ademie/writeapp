@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 import 'package:writeapp/fireauth/auth.dart';
-
+import 'package:writeapp/screens/overview.dart';
 
 class LoginRegister extends StatefulWidget {
   const LoginRegister({super.key});
@@ -20,7 +20,12 @@ class _LoginRegisterState extends State<LoginRegister> {
 
   Future<void> register() async {
     try {
-      await Auth().signIn(email: email.text, password: password.text);
+      await Auth()
+          .signUp(email: email.text, password: password.text)
+          .whenComplete(() =>
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Overview();
+              })));
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
@@ -30,7 +35,12 @@ class _LoginRegisterState extends State<LoginRegister> {
 
   Future<void> login() async {
     try {
-      await Auth().signUp(email: email.text, password: password.text);
+      await Auth()
+          .signIn(email: email.text, password: password.text)
+          .whenComplete(() =>
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Overview();
+              })));
     } on FirebaseAuthException catch (e) {
       setState(() {
         errorMessage = e.message;
@@ -94,7 +104,6 @@ class _LoginRegisterState extends State<LoginRegister> {
             _submitButton(),
             _authButton()
           ],
-
         ),
       ),
     );

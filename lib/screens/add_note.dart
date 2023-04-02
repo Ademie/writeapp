@@ -109,27 +109,29 @@ class _AddNotesState extends State<AddNotes> {
                   ),
                 ],
               ),
-              floatingActionButton: SizedBox(
-                height: 70,
-                width: 70,
-                child: FloatingActionButton(
-                  backgroundColor: Colors.transparent,
-                  elevation: 0,
-                  onPressed: () {
-                    showModalBottomSheet(
-                        context: context,
-                        elevation: 0,
-                        constraints: BoxConstraints(maxWidth: 420),
-                        builder: (BuildContext index) {
-                          return ShowModal();
-                        });
-                  },
-                  child: Icon(
-                    Icons.more,
-                    size: 35,
-                  ),
-                ),
-              ),
+              // floatingActionButton: SizedBox(
+              //   height: 70,
+              //   width: 70,
+              //   child: FloatingActionButton(
+              //     backgroundColor: Colors.transparent,
+              //     elevation: 0,
+              //     onPressed: () {
+              //       showModalBottomSheet(
+              //           context: context,
+              //           elevation: 0,
+              //           constraints: BoxConstraints(maxWidth: 420),
+              //           builder: (BuildContext index) {
+              //             return ShowModal(
+              //               editingNote:,
+              //             );
+              //           });
+              //     },
+              //     child: Icon(
+              //       Icons.more,
+              //       size: 35,
+              //     ),
+              //   ),
+              // ),
             )));
   }
 

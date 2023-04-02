@@ -25,6 +25,7 @@ class _EditNoteState extends State<EditNote> {
 
   @override
   void initState() {
+    super.initState();
     _titleController = TextEditingController(text: widget.editingNote['title']);
     _contentController =
         TextEditingController(text: widget.editingNote['content']);
@@ -126,7 +127,10 @@ class _EditNoteState extends State<EditNote> {
                         elevation: 0,
                         constraints: BoxConstraints(maxWidth: 420),
                         builder: (BuildContext index) {
-                          return ShowModal();
+                          return ShowModal(
+                            editingNote: widget.editingNote
+                            
+                          );
                         });
                   },
                   child: Icon(

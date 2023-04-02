@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:writeapp/fireauth/auth.dart';
+import 'package:writeapp/screens/login_register.dart';
 import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
@@ -29,7 +32,10 @@ class NotesTabBar extends StatelessWidget {
                   padding: EdgeInsets.only(left: 10),
                   child: IconButton(
                     onPressed: () {
-                      Auth().signOut();
+                      Auth().signOut().whenComplete(() => Navigator.push(
+                              context, MaterialPageRoute(builder: (context) {
+                            return LoginRegister();
+                          })));
                     },
                     icon: Icon(
                       Icons.logout_outlined,
