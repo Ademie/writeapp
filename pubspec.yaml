@@ -29,7 +29,7 @@ flutter_native_splash:
   android: true
   ios: true
   color: "#CC4F4F"
-  image: "assets/writeapp.png"
+  image: "assets/splashlogo.png"
 
 
 dev_dependencies:

@@ -46,7 +46,6 @@ class _LoginRegisterState extends State<LoginRegister> {
       height: 100,
       width: 100,
       child: Transform.rotate(
-        // angle: 90 * 3.14 / 180,
         angle: 0,
         child: Image.asset('assets/writeapp.png'),
       ),
@@ -55,7 +54,7 @@ class _LoginRegisterState extends State<LoginRegister> {
 
   Widget _welcomeText() {
     return SizedBox(
-      child: Text("We're glad to have you!"),
+      child: Text("WriteApp!"),
     );
   }
 
@@ -119,6 +118,7 @@ class _LoginRegisterState extends State<LoginRegister> {
         height: double.infinity,
         width: double.infinity,
         padding: EdgeInsets.all(20),
+        margin: EdgeInsets.only(top: 80),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -127,7 +127,7 @@ class _LoginRegisterState extends State<LoginRegister> {
             _welcomeText(),
             Container(
               margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              padding: EdgeInsets.only(left: 10, right: 10, top: 20, bottom: 60),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(width: 1, color: Colors.grey.shade200)),
