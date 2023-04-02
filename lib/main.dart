@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:writeapp/fireauth/auth_changes.dart';
 import 'package:writeapp/screens/overview.dart';
+import 'package:writeapp/splash.dart';
 import 'package:writeapp/theme/constants.dart';
 import 'package:writeapp/theme_manager.dart';
+import 'package:easy_splash_screen/easy_splash_screen.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,7 +56,7 @@ class MyAppState extends State<MyApp> {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeManager.themeMode,
-      home: AuthChanges(),
+      home: SplashPage(),
     );
   }
 }

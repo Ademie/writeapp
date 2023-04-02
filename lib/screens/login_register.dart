@@ -50,7 +50,8 @@ class _LoginRegisterState extends State<LoginRegister> {
       height: 100,
       width: 100,
       child: Transform.rotate(
-        angle: 90 * 3.14 / 180,
+        // angle: 90 * 3.14 / 180,
+        angle: 0,
         child: Image.asset('assets/writeapp.png'),
       ),
     );
@@ -74,17 +75,14 @@ class _LoginRegisterState extends State<LoginRegister> {
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
-          fillColor: Colors.transparent,
-          labelText: title,
-          prefixIcon: Icon(icon),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide(
-              color: WriteColors.primary,
-            
-            )
-          )
-        ),
+            fillColor: Colors.transparent,
+            labelText: title,
+            prefixIcon: Icon(icon),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: BorderSide(
+                  color: WriteColors.primary,
+                ))),
       ),
     );
   }
@@ -147,7 +145,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                   _authButton(),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
