@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:writeapp/components/overviewwidgets/search_bar.dart';
 import 'package:writeapp/components/overviewwidgets/top_bar.dart';
 import 'package:writeapp/screens/add_note.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Overview extends StatefulWidget {
   const Overview({super.key});
@@ -84,7 +85,7 @@ class _OverviewState extends State<Overview> {
                           MaterialPageRoute(builder: (context) => AddNotes()));
                     },
                     child: Icon(
-                      Icons.add,
+                      FontAwesomeIcons.plus,
                       size: 35,
                     ),
                   ),

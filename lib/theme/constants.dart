@@ -33,6 +33,8 @@ ThemeData lightTheme = ThemeData(
   ),
   // TEXT
   textTheme: GoogleFonts.acmeTextTheme(),
+
+  
 );
 
 ThemeData darkTheme = ThemeData(

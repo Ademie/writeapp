@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:writeapp/components/noteswidgets/controls.dart';
 
 class ControlsPanel extends StatelessWidget {
@@ -15,7 +16,7 @@ class ControlsPanel extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Controls(
-            icon: Icons.arrow_back_ios_new,
+            icon: FontAwesomeIcons.arrowLeft,
             action: () => Navigator.pop(context),
           ),
           SizedBox(

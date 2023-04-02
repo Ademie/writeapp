@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:writeapp/components/noteswidgets/controls_panel.dart';
 import 'package:writeapp/components/noteswidgets/notes_title.dart';
 import 'package:writeapp/fireauth/auth.dart';
@@ -47,14 +48,16 @@ class _AddNotesState extends State<AddNotes> {
                         onPressed: () {
                           canUndo() ? undo() : null;
                         },
-                        icon: Icon(Icons.settings_backup_restore_rounded),
+                        icon: Icon(
+                          FontAwesomeIcons.arrowRotateLeft
+                        ),
                       ),
                       IconButton(
                         onPressed: () {
                           canRedo() ? redo() : null;
                         },
                         icon: Icon(
-                          Icons.refresh_rounded,
+                          FontAwesomeIcons.arrowRotateRight
                         ),
                       ),
                       IconButton(
@@ -65,7 +68,7 @@ class _AddNotesState extends State<AddNotes> {
                           }).whenComplete(() => Navigator.pop(context));
                         },
                         icon: Icon(
-                          Icons.check_circle_outline_rounded,
+                          FontAwesomeIcons.circleCheck
                         ),
                       ),
                     ],
