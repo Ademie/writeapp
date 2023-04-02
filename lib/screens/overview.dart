@@ -24,17 +24,13 @@ Future<void> signOut() async {
   await Auth().signOut();
 }
 
-Widget _title() {
-  return Text('Firebase Auth');
-}
+
 
 Widget _userUid() {
   return Text(user?.email ?? 'User email');
 }
 
-Widget _signOutButton() {
-  return ElevatedButton(onPressed: signOut, child: Text('Sign Out'));
-}
+
 
 late int _tabIndex = 0;
 

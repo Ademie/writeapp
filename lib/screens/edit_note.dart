@@ -21,7 +21,11 @@ class _EditNoteState extends State<EditNote> {
 
   TextEditingController _titleController = TextEditingController();
   TextEditingController _contentController = TextEditingController();
-  CollectionReference ref = FirebaseFirestore.instance.collection('notes');
+  // CollectionReference ref = FirebaseFirestore.instance.collection('notes');
+  CollectionReference ref = FirebaseFirestore.instance
+      .collection('profile')
+      .doc('userID')
+      .collection('notes');
 
   @override
   void initState() {

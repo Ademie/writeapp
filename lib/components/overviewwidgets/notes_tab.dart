@@ -17,8 +17,12 @@ class NotesTab extends StatefulWidget {
 class _NotesTabState extends State<NotesTab> {
   @override
   Widget build(BuildContext context) {
-    final db = FirebaseFirestore.instance;
-    final ref = db.collection('notes');
+    // final db = FirebaseFirestore.instance;
+    // final ref = db.collection('notes');
+    CollectionReference ref = FirebaseFirestore.instance
+      .collection('profile')
+      .doc('userID')
+      .collection('notes');
 
     return Scaffold(
       body: StreamBuilder(

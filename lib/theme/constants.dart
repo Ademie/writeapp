@@ -5,9 +5,7 @@ import 'package:writeapp/theme/colors.dart';
 
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
-  appBarTheme: AppBarTheme(
-    color: WriteColors.primary.shade100
-  ),
+  appBarTheme: AppBarTheme(color: WriteColors.primary.shade100),
   scaffoldBackgroundColor: WriteColors.primary.shade100,
   colorScheme: ColorScheme.fromSwatch(
     primarySwatch: generateMaterialColor(
@@ -18,8 +16,7 @@ ThemeData lightTheme = ThemeData(
       backgroundColor: WriteColors.accent, foregroundColor: Colors.white),
   iconTheme: IconThemeData(color: WriteColors.accent, size: 35),
   // INPUT FIELD
-  
-  
+
   inputDecorationTheme: InputDecorationTheme(
     prefixIconColor: WriteColors.accent,
     border: OutlineInputBorder(
@@ -28,7 +25,6 @@ ThemeData lightTheme = ThemeData(
     ),
     filled: true,
     fillColor: WriteColors.primary.shade300,
-    
   ),
   // TABBAR
   tabBarTheme: TabBarTheme(
@@ -41,9 +37,7 @@ ThemeData lightTheme = ThemeData(
 
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
-  appBarTheme: AppBarTheme(
-    color: WriteColors.accent
-  ),
+  appBarTheme: AppBarTheme(color: WriteColors.accent),
   scaffoldBackgroundColor: WriteColors.accent,
   colorScheme: ColorScheme.dark(primary: WriteColors.primary),
   floatingActionButtonTheme: FloatingActionButtonThemeData(
