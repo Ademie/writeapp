@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:writeapp/components/noteswidgets/controls_panel.dart';
 import 'package:writeapp/components/noteswidgets/notes_title.dart';
-import 'package:writeapp/components/noteswidgets/show_modal.dart';
 import 'package:writeapp/theme/colors.dart';
 import 'package:writeapp/theme_manager.dart';
 
@@ -16,11 +15,9 @@ class AddNotes extends StatefulWidget {
 class _AddNotesState extends State<AddNotes> {
   List<String> _history = [];
   int _historyIndex = 0;
-  
+
   TextEditingController _titleController = TextEditingController();
   TextEditingController _contentController = TextEditingController();
-  
-  
 
   CollectionReference ref = FirebaseFirestore.instance.collection('notes');
 
@@ -55,18 +52,18 @@ class _AddNotesState extends State<AddNotes> {
                           Icons.refresh_rounded,
                         ),
                       ),
-                       IconButton(
+                      IconButton(
                         onPressed: () {
                           ref.add({
                             'title': _titleController.text,
                             'content': _contentController.text
                           }).whenComplete(() => Navigator.pop(context));
+                          
                         },
                         icon: Icon(
                           Icons.check_circle_outline_rounded,
                         ),
                       ),
-                 
                     ],
                   ),
                   Container(
@@ -109,29 +106,6 @@ class _AddNotesState extends State<AddNotes> {
                   ),
                 ],
               ),
-              // floatingActionButton: SizedBox(
-              //   height: 70,
-              //   width: 70,
-              //   child: FloatingActionButton(
-              //     backgroundColor: Colors.transparent,
-              //     elevation: 0,
-              //     onPressed: () {
-              //       showModalBottomSheet(
-              //           context: context,
-              //           elevation: 0,
-              //           constraints: BoxConstraints(maxWidth: 420),
-              //           builder: (BuildContext index) {
-              //             return ShowModal(
-              //               editingNote:,
-              //             );
-              //           });
-              //     },
-              //     child: Icon(
-              //       Icons.more,
-              //       size: 35,
-              //     ),
-              //   ),
-              // ),
             )));
   }
 

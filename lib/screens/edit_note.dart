@@ -64,6 +64,7 @@ class _EditNoteState extends State<EditNote> {
                       ),
                       IconButton(
                         onPressed: () {
+                          
                           widget.editingNote.reference.update({
                             'title': _titleController.text,
                             'content': _contentController.text
@@ -128,7 +129,9 @@ class _EditNoteState extends State<EditNote> {
                         constraints: BoxConstraints(maxWidth: 420),
                         builder: (BuildContext index) {
                           return ShowModal(
-                            editingNote: widget.editingNote
+                            editingNote: widget.editingNote,
+                            title: _titleController.text,
+                            content: _contentController.text,
                             
                           );
                         });

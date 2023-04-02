@@ -8,11 +8,17 @@ class ShowModal extends StatelessWidget {
   const ShowModal({
     super.key,
     required this.editingNote,
+    required this.title,
+    required this.content,
   });
   final DocumentSnapshot editingNote;
+  final String title;
+  final String content;
 
   @override
   Widget build(BuildContext context) {
+    CollectionReference ref = FirebaseFirestore.instance.collection('notes');
+
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -38,7 +44,13 @@ class ShowModal extends StatelessWidget {
               ),
               ModalActionTile(
                 action: () {
-                  
+                  ref.add({
+                    'title': title,
+                    'content': content,
+                  }).whenComplete(() => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Overview();
+                      })));
                 },
                 label: "Duplicate",
                 icon: Icons.copy_rounded,
