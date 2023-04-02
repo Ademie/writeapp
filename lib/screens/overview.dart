@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:writeapp/components/overviewwidgets/folders_tab.dart';
 import 'package:writeapp/components/overviewwidgets/folders_tab_bar.dart';
 import 'package:writeapp/components/overviewwidgets/notes_tab.dart';
@@ -7,7 +8,7 @@ import 'package:writeapp/fireauth/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:writeapp/components/overviewwidgets/search_bar.dart';
 import 'package:writeapp/components/overviewwidgets/top_bar.dart';
-import 'package:writeapp/screens/addnotes.dart';
+import 'package:writeapp/screens/add_note.dart';
 import 'package:writeapp/theme/colors.dart';
 
 class Overview extends StatefulWidget {
@@ -36,6 +37,8 @@ Widget _signOutButton() {
 }
 
 late int _tabIndex = 0;
+
+
 
 class _OverviewState extends State<Overview> {
   @override
